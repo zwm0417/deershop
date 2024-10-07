@@ -1,0 +1,73 @@
+@use '../root.scss';
+
+$direction: (
+  t: top,
+  r: right,
+  b: bottom,
+  l: left
+);
+
+@for $i from 0 through 32 {
+  @each $d, $dv in $direction {
+    .m#{$d}-#{$i} {
+      margin-#{$dv}: $i * 2px !important;
+    }
+    .p#{$d}-#{$i} {
+      padding-#{$dv}: $i * 2px !important;
+    }
+
+    .b#{$d}-#{$i} {
+      border-#{$dv}: var(--el-border);
+      border-width: $i * 1px;
+    }
+    .#{$d}-#{$i}px {
+      #{$dv}: $i * 2px !important;
+    }
+  }
+
+  .m-#{$i} {
+    margin: $i * 2px !important;
+  }
+  .mx-#{$i} {
+    margin-left: $i * 2px !important;
+    margin-right: $i * 2px !important;
+  }
+  .my-#{$i} {
+    margin-top: $i * 2px !important;
+    margin-bottom: $i * 2px !important;
+  }
+
+  .p-#{$i} {
+    padding: $i * 2px !important;
+  }
+  .px-#{$i} {
+    padding-left: $i * 2px !important;
+    padding-right: $i * 2px !important;
+  }
+  .py-#{$i} {
+    padding-top: $i * 2px !important;
+    padding-bottom: $i * 2px !important;
+  }
+
+  .b-#{$i} {
+    border: var(--el-border);
+    border-width: $i * 1px;
+  }
+  .bx-#{$i} {
+    border-left: var(--el-border);
+    border-right: var(--el-border);
+    border-width: $i * 1px;
+  }
+  .by-#{$i} {
+    border-top: var(--el-border);
+    border-bottom: var(--el-border);
+    border-width: $i * 1px;
+  }
+}
+
+.b-radius {
+  border-radius: var(--el-border-radius-base);
+}
+.b-radius-circle {
+  border-radius: 50%;
+}

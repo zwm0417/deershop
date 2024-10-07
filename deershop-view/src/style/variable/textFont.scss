@@ -1,0 +1,55 @@
+@use '../root.scss';
+
+$themes: (
+  primary: var(--el-color-primary),
+  success: var(--el-color-success),
+  warning: var(--el-color-warning),
+  danger: var(--el-color-danger),
+  error: var(--el-color-error),
+  info: var(--el-color-info)
+);
+@each $t, $tv in $themes {
+  .text-#{$t} {
+    color: $tv;
+  }
+}
+.text-white {
+  color: white;
+}
+.text-black {
+  color: black;
+}
+
+@each $t in (left, center, right) {
+  .text-#{$t} {
+    text-align: $t;
+  }
+}
+
+$text-themes: (
+  primary: var(--el-text-color-primary),
+  regular: var(--el-text-color-regular),
+  secondary: var(--el-text-color-secondary),
+  placeholder: var(--el-text-color-placeholder),
+  disabled: var(--el-text-color-disabled)
+);
+@each $t, $tv in $text-themes {
+  .text-color-#{$t} {
+    color: $tv;
+  }
+}
+
+$sizes: (
+  extra-large: 20px,
+  large: 18px,
+  medium: 16px,
+  base: 14px,
+  small: 13px,
+  extra-small: 12px
+);
+
+@each $s, $sv in $sizes {
+  .fs-#{$s} {
+    font-size: $sv;
+  }
+}

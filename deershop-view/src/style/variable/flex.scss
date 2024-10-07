@@ -1,0 +1,46 @@
+.grid {
+  display: grid;
+}
+.block {
+  display: block;
+}
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  display: flex;
+  flex: 1 1 0%;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$types: (
+  center: center,
+  start: flex-start,
+  end: flex-end,
+  sb: space-between,
+  sa: space-around,
+  se: space-evenly,
+  stretch: stretch,
+  baseline: baseline
+);
+
+@each $t, $tv in $types {
+  .jc-#{$t} {
+    justify-content: $tv;
+  }
+
+  .ai-#{$t} {
+    align-items: $tv;
+  }
+}

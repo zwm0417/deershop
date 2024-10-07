@@ -1,0 +1,91 @@
+body {
+  background-color: #f1f1f1;
+}
+
+// 单行文字溢出
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@for $i from 0 through 100 {
+  .w-#{$i} {
+    width: $i * 2px;
+  }
+  .min-w-#{$i} {
+    min-width: $i * 2px;
+  }
+  .max-w-#{$i} {
+    max-width: $i * 2px;
+  }
+
+  .h-#{$i} {
+    height: $i * 2px;
+  }
+  .min-h-#{$i} {
+    min-height: $i * 2px;
+  }
+  .max-h-#{$i} {
+    max-height: $i * 2px;
+  }
+
+  // 多行文字溢出
+  .ellipsis-#{$i} {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: $i;
+    -webkit-box-orient: vertical;
+  }
+}
+
+.w-auto {
+  width: auto;
+}
+.w-full {
+  width: 100%;
+}
+.h-auto {
+  height: auto;
+}
+.h-full {
+  height: 100%;
+}
+
+.bg {
+  background-color: #f1f1f1;
+}
+.bg-white {
+  background-color: white;
+}
+.bg-black {
+  background-color: black;
+}
+
+// 定位
+@each $t in (relative, absolute, fixed, static, sticky) {
+  .#{$t} {
+    position: $t;
+  }
+}
+
+@each $t in (hidden, auto, scroll) {
+  .overflow-#{$t} {
+    overflow: $t;
+  }
+
+  .overflow-x-#{$t} {
+    overflow-x: $t;
+  }
+  .overflow-y-#{$t} {
+    overflow-y: $t;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.bolder {
+  font-weight: bolder;
+}
