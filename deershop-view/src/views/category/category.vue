@@ -1,8 +1,13 @@
 <template>
   <div class="category">
-    <header class="flex bg-white bb-1 fixed t-0px w-full">
+    <header class="category-search flex bg-white bb-1 fixed t-0px w-full">
       <div class="chat">
-        <van-icon name="chat-o" color="var(--el-text-color-secondary)" @click="router.back()" />
+        <van-icon
+          name="chat-o"
+          color="var(--el-text-color-secondary)"
+          size="20"
+          @click="router.back()"
+        />
       </div>
 
       <div class="search-input flex-1 mr-4">
@@ -19,20 +24,27 @@
         <van-icon
           name="shopping-cart-o"
           color="var(--el-text-color-secondary)"
+          size="20"
           @click="() => router.push('/shoppingCar')"
         />
       </div>
     </header>
 
-    <div class="">
-      <van-sidebar v-model="active">
-        <van-sidebar-item v-for="(item, index) in sidebarList" :key="index" :title="item.title" />
-      </van-sidebar>
+    <div class="category-main h-full">
+      <div class="fixed overflow-y-auto h-full">
+        <van-sidebar v-model="active">
+          <van-sidebar-item v-for="(item, index) in sidebarList" :key="index" :title="item.title" />
+        </van-sidebar>
+      </div>
+
+      <categoryDetail :category-id="active"></categoryDetail>
     </div>
   </div>
 </template>
 
 <script setup>
+import categoryDetail from './detail.vue'
+
 defineOptions({
   name: 'category'
 })
@@ -198,6 +210,7 @@ $square: 48px;
   padding-top: $square;
 
   header {
+    z-index: 9;
     height: $square;
     & > div {
       display: flex;
@@ -209,6 +222,10 @@ $square: 48px;
       width: $square;
     }
   }
+}
+
+.category-main div:nth-child(1)::-webkit-scrollbar {
+  display: none;
 }
 
 .van-sidebar {
