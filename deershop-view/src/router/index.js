@@ -80,6 +80,14 @@ const router = createRouter({
       meta: {
         title: '商品详情'
       }
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('@/views/login/login.vue'),
+      meta: {
+        title: '登录页'
+      }
     }
   ]
 })

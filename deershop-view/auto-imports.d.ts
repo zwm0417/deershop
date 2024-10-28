@@ -7,6 +7,7 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
+  const closeNotify: typeof import('vant/es')['closeNotify']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
   const customRef: typeof import('vue')['customRef']
@@ -48,6 +49,7 @@ declare global {
   const shallowReadonly: typeof import('vue')['shallowReadonly']
   const shallowRef: typeof import('vue')['shallowRef']
   const showConfirmDialog: typeof import('vant/es')['showConfirmDialog']
+  const showNotify: typeof import('vant/es')['showNotify']
   const showToast: typeof import('vant/es')['showToast']
   const toRaw: typeof import('vue')['toRaw']
   const toRef: typeof import('vue')['toRef']

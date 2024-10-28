@@ -18,7 +18,7 @@
       <ul class="list-wrapper p-4">
         <li v-for="(item, index) in dataList" :key="item.iid" class="b-radius overflow-hidden">
           <div class="">
-            <img :src="item.itemImage" alt="" class="w-full block" />
+            <img :src="item.itemImage" alt="" class="w-full" />
           </div>
           <div class="fs-small bg-white p-4">
             <p class="ellipsis-2 mb-4 text-color-regular">{{ item.title }}</p>

@@ -7,11 +7,11 @@
     >
       <div class="good-media-wrap relative">
         <div class="good-media-image">
-          <img :src="item.itemImage" alt="" class="w-full block" />
+          <img :src="item.itemImage" alt="" class="w-full" />
         </div>
         <div class="good-media-actor flex ai-center fs-extra-small px-4 py-6 text-white">
           <div class="good-media-actor-avatar b-radius-circle overflow-hidden b-1">
-            <img :src="item.actorAvatar" alt="" class="w-10 block" />
+            <img :src="item.actorAvatar" alt="" class="w-10" />
           </div>
           <div class="good-media-actor-name px-2">
             <span>{{ item.actorName }}</span>
