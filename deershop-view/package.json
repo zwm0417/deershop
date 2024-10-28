@@ -16,6 +16,7 @@
     "lodash-es": "^4.17.21",
     "mitt": "^3.0.1",
     "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^4.1.2",
     "vant": "^4.9.6",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"

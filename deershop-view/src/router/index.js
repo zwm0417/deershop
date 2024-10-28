@@ -72,6 +72,14 @@ const router = createRouter({
       meta: {
         title: '分类'
       }
+    },
+    {
+      path: '/goodsDetail',
+      name: 'goodsDetail',
+      component: () => import('@/views/goodsDetail/goodsDetail.vue'),
+      meta: {
+        title: '商品详情'
+      }
     }
   ]
 })

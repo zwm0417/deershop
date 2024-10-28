@@ -23,7 +23,9 @@
       </div>
 
       <div class="good-info p-4">
-        <div class="good-title ellipsis-2 fs-base mb-4">{{ item.title }}</div>
+        <div class="good-title ellipsis-2 fs-base mb-4" @click="goDetail(item)">
+          {{ item.title }}
+        </div>
         <div class="good-price text-danger flex jc-sb ai-center fs-extra-small">
           <div>
             <span>¥</span>
@@ -41,8 +43,21 @@
 
 <script setup>
 import { getHomeGoods } from '@/api/home'
+import { useGoodsStore } from '@/stores/goods'
+import { storeToRefs } from 'pinia'
+
+const router = useRouter()
+const { current } = storeToRefs(useGoodsStore())
 
 const goodList = ref([])
+
+function goDetail(item) {
+  current.value = item
+
+  router.push({
+    path: '/goodsDetail'
+  })
+}
 
 /**
  * 处理金额
